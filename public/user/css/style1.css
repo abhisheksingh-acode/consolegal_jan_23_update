@@ -1,0 +1,912 @@
+@charset "UTF-8";
+
+/*signup page css start */
+
+body {
+    background: #f4f4f4;
+    overflow-x: hidden;
+}
+
+.an-btn {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    background: #fdb03b;
+    border-radius: 0;
+    font-weight: 500;
+    color: #fff;
+    border: none;
+    position: relative;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 3px 10px -7px rgb(0 0 0 / 47%);
+    box-shadow: 0px 3px 10px -7px rgb(0 0 0 / 47%);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.btn.focus,
+.btn:focus {
+    outline: 0;
+    box-shadow: unset !important;
+}
+
+.an-btn::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    left: 40%;
+    background-color: #fff;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+
+section.sec-sign .custom-control-input:checked ~ .custom-control-label::before {
+    color: #fff;
+    border-color: #fdb03b;
+    background-color: #fdb03b;
+}
+
+section.sec-sign .login_page.bg-white.shadow.rounded.p-4 {
+    margin-top: 50px;
+    border-radius: 10px !important;
+    background: #fff !important;
+}
+
+section.sec-sign .btn-primary:hover {
+    color: #fdb03b;
+    transition: all 0.2s ease;
+    border-color: transparent;
+    -webkit-box-shadow: 0px 4px 10px -3px #3333323b;
+    box-shadow: 0px 4px 10px -3px #3333323b;
+    background: #15426d;
+}
+
+section.sec-sign h4.mb-4 {
+    color: #000;
+}
+
+section.sec-sign .custom-checkbox .custom-control-label::before {
+    border-radius: unset;
+    background: #949191;
+    border: unset;
+}
+
+section.sec-sign small.text-dark.mr-2 {
+    color: #4c5258 !important;
+}
+
+section.sec-sign .text-dark:hover {
+    color: #0056b3 !important;
+    text-decoration: unset;
+}
+
+section.sec-sign .text-dark {
+    color: #007bff !important;
+}
+section.sec-sign.page img.clogo {
+    margin: 0 auto;
+    width: 30%;
+    display: block;
+}
+
+section.sec-sign.page .login-page h4.mb-4 {
+    color: #000;
+    margin-bottom: 0px !important;
+}
+section.sec-sign.page .login-page p {
+    margin-bottom: 0px;
+}
+
+section.sec-sign.page a.btn.my-4.shadow-sm.btn-white {
+    width: 100%;
+    background-color: #fff;
+    border-color: #e7eaf3;
+}
+
+section.sec-sign.page a.btn.btn-facebook {
+    box-shadow: 0 2px 2px 0 rgb(59 89 152 / 14%),
+        0 3px 1px -2px rgb(59 89 152 / 20%), 0 1px 5px 0 rgb(59 89 152 / 12%);
+    background-color: #3b5998;
+    border-color: #3b5998;
+    color: #fff;
+    width: 100%;
+}
+
+section.sec-sign.page .login-separater span {
+    position: relative;
+    top: 26px;
+    margin-top: -10px;
+    background: #fff;
+    padding: 5px;
+    font-size: 12px;
+    color: #cbcbcb;
+    z-index: 1;
+}
+section.sec-sign.page .text-center p a:hover {
+    text-decoration: unset;
+}
+section.sec-sign h4.mb-4 {
+    color: #000;
+    margin-bottom: 4px !important;
+}
+
+section.sec-sign input.form-control::placeholder {
+    color: #cbcbcb;
+}
+
+section.sec-sign i.fa.fa-eye-slash {
+    /* float: right; */
+    top: 43px;
+    position: absolute;
+    left: 94%;
+    color: #c1cad1;
+}
+body {
+    color: #4c5258;
+}
+
+/* login page css start*/
+body.loginbody {
+    background-color: #fff;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+section.sec-login img.clogo {
+    margin: 0 auto;
+    width: 30%;
+    display: block;
+}
+section.sec-login .login-page.bg-white.shadow.rounded.p-4 {
+    margin-top: 30px;
+    box-shadow: 0 0.3rem 0.8rem rgb(0 0 0 / 12%) !important;
+    background: #fff;
+}
+
+section.sec-login .login-page .fp button {
+    background: unset;
+    border: none;
+    color: #0d6efd;
+}
+section.sec-login .login-page h4.mb-4 {
+    color: #000;
+    margin-bottom: 0px !important;
+}
+
+section.sec-login .login-page p {
+    margin-bottom: 0px;
+}
+section.sec-login .login-page input.form-control::placeholder {
+    color: #cbcbcb;
+}
+
+section.sec-login .login-page .custom-checkbox .custom-control-label::before {
+    border-radius: unset;
+    background: #949191;
+    border: unset;
+}
+
+section.sec-login .login-page small.text-dark.mr-2 {
+    color: #fff !important;
+}
+
+section.sec-login .login-page .text-dark {
+    color: #7999b9 !important;
+}
+section.sec-login .login-page .text-dark:hover {
+    color: #fdb03b !important;
+}
+
+section.sec-login .login-page button.btn.btn-primary:hover {
+    background: rgb(21, 66, 109);
+}
+
+section.sec-login
+    .login-page.bg-white.shadow.rounded.p-4
+    a.btn.my-4.shadow-sm.btn-white {
+    width: 100%;
+    background-color: #fff;
+    border-color: #e7eaf3;
+}
+section.sec-login .login-page.bg-white.shadow.rounded.p-4 .text-center p a {
+    font-size: 14px;
+    padding-left: 12px;
+}
+
+section.sec-login
+    .login-page.bg-white.shadow.rounded.p-4
+    .text-center
+    p
+    a:hover {
+    text-decoration: none;
+}
+section.sec-login .login-page.bg-white.shadow.rounded.p-4 a.btn.btn-facebook {
+    box-shadow: 0 2px 2px 0 rgb(59 89 152 / 14%),
+        0 3px 1px -2px rgb(59 89 152 / 20%), 0 1px 5px 0 rgb(59 89 152 / 12%);
+    background-color: #3b5998;
+    border-color: #3b5998;
+    color: #fff;
+    width: 100%;
+}
+
+section.sec-login .login-page .fp button:focus {
+    outline: unset;
+}
+section.sec-login .login-page i.fa.fa-eye-slash {
+    /* float: right; */
+    top: 43px;
+    position: absolute;
+    left: 94%;
+    color: #c1cad1;
+}
+
+section.sec-login .login-page .login-separater span {
+    position: relative;
+    top: 26px;
+    margin-top: -10px;
+    background: #fff;
+    padding: 5px;
+    font-size: 12px;
+    color: #cbcbcb;
+    z-index: 1;
+}
+
+/* pop up css */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+/* .close {
+       position: absolute;
+        right: 30%;
+    top: 35%;
+    color: #fdb03b;
+    font-size: 35px;
+    font-weight: bold;
+} */
+
+.close:hover,
+.close:focus {
+    color: #fdb03b;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s;
+}
+
+.modal .container {
+    width: 40%;
+    margin-top: 210px;
+    background: #ccc;
+}
+
+.modal .container button {
+    float: right;
+    background: #fdb03b;
+    border: none;
+    color: #fff;
+    padding: 10px;
+}
+
+.modal .container input[type="text"] {
+    background: #cccc;
+    border: 1px solid #b7a5a5;
+    padding: 6px;
+}
+
+/*account page */
+section.account form.login-form {
+    background: #fff;
+    padding: 20px;
+    margin-top: 53px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+section.account div#id01 a {
+    float: right;
+}
+
+div#id01 .container {
+    background: #000000ab !important;
+    padding: 40px;
+}
+
+div#id01 .container p {
+    color: #fff;
+    padding-bottom: 20px;
+}
+
+div#id01 .container a {
+    float: right;
+}
+
+div#id01 .container input[type="text"] {
+    background: #fff;
+    border-radius: 0.25rem;
+    padding: 6px;
+    width: 100%;
+    border: 1px solid #ced4da;
+}
+div#menu1 a {
+    color: #fdb03b;
+}
+div#menu1 a:hover {
+    text-decoration: unset;
+}
+section.myccount .form-group.load {
+    background: #fff;
+    padding: 11px;
+}
+
+section.myccount button.uploadbtn {
+    background: #fdb03b;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    color: #fff;
+}
+
+section.myccount .fp button {
+    float: right;
+}
+
+section.myccount .fp button {
+    background: none;
+}
+
+section.myccount ul.nav.tabs {
+    display: contents;
+}
+
+section.myccount button {
+    background: none;
+    border: none;
+    color: #007bff;
+}
+
+section.myccount button:focus {
+    outline: unset !important;
+}
+
+section.myccount .tab-content.box-shd {
+    padding: 50px 50px 160px;
+}
+
+section.myccount .tab-content.box-shd input.form-control::placeholder {
+    color: #cec8c8;
+    font-size: 15px;
+}
+
+section.myccount .container-fluid .col-md-10 {
+    padding: 0px;
+}
+
+section.myccount .container-fluid .header {
+    background: #fff;
+    box-shadow: 10px 10px 5px 0px rgb(238 238 238 / 75%);
+    display: flex;
+}
+
+section.myccount .container-fluid .header .position-absolute {
+    position: absolute !important;
+    top: 38px;
+    right: 0px;
+}
+
+section.myccount .tab-content h3.rtext {
+    color: #5f5f5f;
+    padding-bottom: 30px;
+}
+
+section.myccount .tab-content label {
+    color: #5f5f5f;
+}
+
+section.myccount .rightside ul li a {
+    font-size: 18px;
+    color: #5f5f5f;
+}
+
+section.myccount .rightside ul li a:hover {
+    color: #007bff;
+    text-decoration: none;
+}
+
+section.myccount .rgtitle img.logo-icon {
+    width: 150px;
+    cursor: pointer;
+}
+
+section.myccount .container-fluid i.fa.fa-download {
+    border: 1px solid #fdb03b;
+    padding: 5px;
+    margin-top: 10px;
+}
+section.myccount .container-fluid td.text-center span.border {
+    border: 1px solid #c0c3c5 !important;
+    padding: 9px;
+}
+section.myccount .container-fluid .header .search-bar.flex-grow-1 {
+    width: 50%;
+    float: left;
+}
+
+section.myccount .container-fluid .header input.form-control.search-control {
+    background-color: #f6f5f5;
+    border: 1px solid #f2efef;
+    padding: 20px;
+    margin-left: 25px;
+}
+
+section.myccount .container-fluid .header ul.hicons li {
+    padding-right: 15px;
+}
+section.myccount .container-fluid .header ul.hicons li i {
+    font-size: 20px;
+}
+section.myccount
+    .container-fluid
+    .header
+    input.form-control.search-control::placeholder {
+    color: #cec8c8;
+}
+
+section.myccount
+    .container-fluid
+    .header
+    input.form-control.search-control
+    i.fa.fa-search {
+    color: #cec8c8;
+}
+section.myccount .container-fluid .header ul.hicons {
+    display: flex;
+    padding-top: 30px;
+    float: right;
+}
+
+section.myccount .container-fluid .header ul.hicons li {
+    list-style: none;
+}
+
+section.myccount .container-fluid .header .col-md-3.acclog {
+    border-left: 1px solid #f0f0f0;
+    padding-top: 27px;
+}
+section.myccount .container-fluid .header .acclog h3 {
+    font-size: 17px;
+    font-weight: 500;
+    color: #413c3c;
+    display: flex;
+}
+
+section.myccount .container-fluid .header .position-relative.search-bar-box {
+    padding: 30px 0;
+}
+
+section.myccount .container-fluid .header .acclog h6 {
+    font-size: 14px;
+    color: #a9a8a8;
+}
+section.myccount .container-fluid .header .col-md-3.acclog img.logo-icon {
+    width: 35px;
+    float: left;
+    margin-right: 25px;
+    border-radius: 50%;
+    height: 35px;
+}
+
+section.myccount .rgtitle {
+    border-bottom: 1px solid #e4e4e4;
+    padding: 20px 0px 20px 15px;
+}
+section.myccount h1.actitle img.logo-icon {
+    width: 30px;
+    margin-right: 16px;
+}
+
+section.myccount nav.nav-sidebar {
+    padding-top: 20px;
+}
+
+section.myccount table.table thead tr th {
+    color: #007bff;
+}
+
+section.myccount .custab {
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 5% 0;
+    box-shadow: 3px 3px 2px #ccc;
+    transition: 0.5s;
+}
+section.myccount .custab:hover {
+    box-shadow: 3px 3px 0px transparent;
+    transition: 0.5s;
+}
+
+section.myccount .table td,
+.table th {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+    color: #5f5f5f;
+}
+
+section.myccount a.btn.btn-info.btn-xs {
+    background: #fdb03b;
+    border-color: #fdb03b;
+    padding: 10px 45px;
+}
+
+section.myccount ul.nav.tabs li {
+    border-bottom: 1px solid #7a7a7a;
+    padding: 15px 0px 15px 15px;
+}
+
+section.myccount ul.nav.tabs li:hover {
+    background: rgb(13 110 253 / 0.12);
+}
+
+section.myccount .rightside .nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+    color: #495057;
+    background-color: #fff;
+    border-color: #dee2e6 #dee2e6 #fff;
+}
+
+section.myccount ul.nav.tabs li i {
+    color: #5f5f5f;
+    padding-right: 15px;
+}
+section.myccount ul.nav.tabs li:hover i.fa.fa-google-wallet {
+    color: #fdb03b !important;
+    opacity: unset !important;
+}
+section.myccount ul.nav.tabs li:hover i.fa.fa-share-square {
+    color: #fdb03b !important;
+    opacity: unset !important;
+}
+
+section.myccount ul.nav.tabs li:hover ul.nav.tabs li i {
+    color: #fff;
+}
+section.myccount ul.nav.tabs li:hover i.fa.fa-user {
+    color: #fdb03b !important;
+    opacity: unset !important;
+}
+
+section.myccount ul.nav.tabs li:hover i.fa.fa-shopping-basket {
+    color: #fdb03b !important;
+    opacity: unset !important;
+}
+
+section.myccount .rightside {
+    box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.12) !important;
+    height: 100%;
+    background: #fff;
+}
+div#tab3 .wallet {
+    box-shadow: 10px 10px 5px 0px rgb(238 238 238 / 75%);
+    background: #fff;
+    padding: 50px 60px;
+}
+
+div#tab3 .wallet i.fa.fa-google-wallet {
+    background: red;
+    padding-top: 15px;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    padding-left: 14px;
+}
+
+div#tab3 .wallet i.fa.fa-credit-card-alt {
+    background: #2196f3;
+    padding-top: 15px;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    padding-left: 13px;
+}
+div#tab3 .wallet i.fa.fa-money {
+    background: #54cb59;
+    padding-top: 15px;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    padding-left: 15px;
+}
+
+div#tab3 .wallet h5 {
+    padding-top: 15px;
+    color: #b0b4b6;
+}
+div#tab3 .wallet h6 {
+    font-size: 30px;
+    color: #000;
+}
+
+div#tab4 nav > .nav.nav-tabs {
+    border: none;
+    color: #fff;
+    background: #272e38;
+    border-radius: 0;
+}
+div#tab4 nav > div a.nav-item.nav-link,
+div#tab4 nav > div a.nav-item.nav-link.active {
+    border: none;
+    padding: 18px 25px;
+    color: #fff;
+    background: #272e38;
+    border-radius: 0;
+}
+
+div#tab4 nav > div a.nav-item.nav-link.active:after {
+    content: "";
+    position: relative;
+    bottom: -60px;
+    left: -10%;
+    border: 15px solid transparent;
+    border-top-color: #f0a434;
+}
+div#tab4 .tab-content {
+    background: #fdfdfd;
+    line-height: 25px;
+    border: 1px solid #ddd;
+    border-top: 5px solid #f0a434;
+    border-bottom: 5px solid #f0a434;
+    padding: 30px 25px;
+}
+
+div#tab4 nav > div a.nav-item.nav-link:hover,
+div#tab4 nav > div a.nav-item.nav-link:focus {
+    border: none;
+    background: #285785;
+    color: #fff;
+    border-radius: 0;
+    transition: background 0.2s linear;
+}
+div#nav-home {
+    padding: 20px 50px;
+}
+div#tab4 .tab-content div#nav-home img {
+    width: 80px;
+    margin: 0 auto;
+    display: block;
+}
+div#tab4 .tab-content div#nav-home h3 {
+    text-align: center;
+    font-size: 25px;
+}
+div#tab4 .tab-content div#nav-home h6.title {
+    background: #285785;
+    color: #fff;
+    padding: 10px;
+}
+
+div#tab4 .tab-content div#nav-home input[type="text"] {
+    border: none;
+    background: #f7f7f7;
+    padding: 20px;
+    width: 100%;
+}
+div#tab4 .tab-content div#nav-home button.tapbtn {
+    background: #fdb03b;
+    border: none;
+    color: #fff;
+    padding: 19px 30px;
+}
+div#nav-home h5 {
+    text-align: center;
+    padding: 20px 0;
+}
+div#tab4 .tab-content div#nav-home span {
+    background: #04aa6d;
+    color: #fff;
+    padding: 15px 25px;
+    line-height: 51px;
+}
+div#tab4 .tab-content div#nav-home i.fa.fa-facebook {
+    background: #a4a4a4;
+    color: #fff;
+    padding: 15px 20px;
+    font-size: 20px;
+}
+div#tab4 .tab-content div#nav-home i.fa.fa-paper-plane {
+    background: #a4a4a4;
+    color: #fff;
+    padding: 15px 20px;
+    font-size: 20px;
+}
+
+div#tab4 .tab-content div#nav-home i.fa.fa-share-alt {
+    background: #a4a4a4;
+    color: #fff;
+    padding: 15px 20px;
+    font-size: 20px;
+}
+div#tab4 .tab-content div#nav-home p.inv-title {
+    background: #fdb03b;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    margin-top: 20px;
+}
+/*div#accordion .card-header.bg-dark{background-color: #285785!important;}*/
+
+/*responsive css */
+@media only screen and (max-width: 767px),
+    only screen and (max-device-width: 767px) {
+    section.myccount .rightside {
+        padding: 0 22px 50px;
+    }
+
+    section.myccount .box-shd {
+        padding: 0px !important;
+    }
+    section.myccount form.login-form {
+        padding: 50px 30px;
+    }
+
+    section.myccount button {
+        padding-left: 0px;
+    }
+
+    div#id01 .container {
+        width: 90%;
+    }
+
+    div#tab2 {
+        padding: 30px 0;
+    }
+
+    div#tab2 ul.nav.nav-tabs {
+        padding-left: 20px;
+    }
+
+    section.myccount table.table thead tr th {
+        color: #fdb03b;
+        font-size: 14px;
+        vertical-align: top;
+    }
+
+    section.myccount table.table.table-striped.custab a.btn.btn-info.btn-xs {
+        padding: 5px;
+        font-size: 12px;
+    }
+
+    section.myccount .table td,
+    .table th {
+        font-size: 14px;
+        padding: 5px !important;
+    }
+
+    section.myccount ul.nav.tabs li {
+        padding: 15px 10px;
+    }
+    section.myccount .container-fluid .header .search-bar.flex-grow-1 {
+        width: 50%;
+        display: none;
+        float: left;
+    }
+    section.myccount .rgtitle img.logo-icon {
+        margin: 0 auto;
+        display: block;
+        width: 55%;
+    }
+    section.myccount .container-fluid .header {
+        border-bottom: 1px solid #efe8e8;
+    }
+    div#menu1 {
+        padding: 0px;
+    }
+    section.myccount .container-fluid td.text-center span.border {
+        border: unset !important;
+    }
+    div#tab3 .wallet {
+        padding: 15px 50px;
+        margin: 0px auto 20px;
+        width: 80%;
+    }
+
+    div#nav-home {
+        padding: 20px;
+    }
+
+    div#tab4 .tab-content div#nav-home button.tapbtn {
+        padding: 20px 15px;
+        position: absolute;
+        left: -17px;
+    }
+    div#tab4 .tab-content div#nav-home h3 {
+        padding-bottom: 20px;
+    }
+    div#tab4 .tab-content div#nav-home span {
+        padding: 14px 4px;
+    }
+    div#tab4 .tab-content div#nav-home i.fa.fa-facebook {
+        padding: 15px;
+    }
+    div#tab4 .tab-content div#nav-home i.fa.fa-paper-plane {
+        padding: 15px;
+    }
+    div#tab4 .tab-content div#nav-home i.fa.fa-share-alt {
+        padding: 15px;
+    }
+    section.myccount .container-fluid .header ul.hicons li {
+        padding-right: 10px;
+    }
+    /*div#tab3 .wallet i.fa.fa-credit-card-alt {
+    padding-top: 11px;
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+    padding-left: 11px;
+}
+div#tab3 .wallet i.fa.fa-google-wallet {
+    padding-top: 11px;
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+    padding-left: 11px;
+}
+div#tab3 .wallet i.fa.fa-money {
+    padding-top: 11px;
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+    padding-left: 11px;
+}*/
+}

@@ -1,0 +1,1 @@
+[29-Mar-2022 12:06:37 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 454243136 bytes) in /home2/blogscas/consolegal.com/public/web/fonts/88df9e211d4be0938bcb62fbe3521a22.module on line 116

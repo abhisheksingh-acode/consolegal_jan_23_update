@@ -1,0 +1,56 @@
+@font-face {
+    font-family: 'FontsFreeNetProximaNovaSbold';
+    src: url('../fonts/FontsFreeNetProximaNovaSbold.eot');
+    src: url('../fonts/FontsFreeNetProximaNovaSbold.eot') format('embedded-opentype'),
+         url('../fonts/FontsFreeNetProximaNovaSbold.woff2') format('woff2'),
+         url('../fonts/FontsFreeNetProximaNovaSbold.woff') format('woff'),
+         url('../fonts/FontsFreeNetProximaNovaSbold.ttf') format('truetype'),
+         url('../fonts/FontsFreeNetProximaNovaSbold.svg#FontsFreeNetProximaNovaSbold') format('svg');
+}
+
+@font-face {
+    font-family: 'ProximaNovaRegular';
+    src: url('../fonts/ProximaNovaRegular.eot');
+    src: url('../fonts/ProximaNovaRegular.eot') format('embedded-opentype'),
+         url('../fonts/ProximaNovaRegular.woff2') format('woff2'),
+         url('../fonts/ProximaNovaRegular.woff') format('woff'),
+         url('../fonts/ProximaNovaRegular.ttf') format('truetype'),
+         url('../fonts/ProximaNovaRegular.svg#ProximaNovaRegular') format('svg');
+}
+@font-face {
+    font-family: 'raleway_bold';
+    src: url('../fonts/raleway_bold.eot');
+    src: url('../fonts/raleway_bold.eot') format('embedded-opentype'),
+         url('../fonts/raleway_bold.woff2') format('woff2'),
+         url('../fonts/raleway_bold.woff') format('woff'),
+         url('../fonts/raleway_bold.ttf') format('truetype'),
+         url('../fonts/raleway_bold.svg#raleway_bold') format('svg');
+}
+
+@font-face {
+    font-family: 'ProximaNovaLight';
+    src: url('../fonts/ProximaNovaLight.eot');
+    src: url('../fonts/ProximaNovaLight.eot') format('embedded-opentype'),
+         url('../fonts/ProximaNovaLight.woff2') format('woff2'),
+         url('../fonts/ProximaNovaLight.woff') format('woff'),
+         url('../fonts/ProximaNovaLight.ttf') format('truetype'),
+         url('../fonts/ProximaNovaLight.svg#ProximaNovaLight') format('svg');
+}
+@font-face {
+    font-family: 'ProximaNovaBold';
+    src: url('../fonts/ProximaNovaBold.eot');
+    src: url('../fonts/ProximaNovaBold.eot') format('embedded-opentype'),
+         url('../fonts/ProximaNovaBold.woff2') format('woff2'),
+         url('../fonts/ProximaNovaBold.woff') format('woff'),
+         url('../fonts/ProximaNovaBold.ttf') format('truetype'),
+         url('../fonts/ProximaNovaBold.svg#ProximaNovaBold') format('svg');
+}
+@font-face {
+    font-family: 'raleway_heavy';
+    src: url('../fonts/raleway_heavy.eot');
+    src: url('../fonts/raleway_heavy.eot') format('embedded-opentype'),
+         url('../fonts/raleway_heavy.woff2') format('woff2'),
+         url('../fonts/raleway_heavy.woff') format('woff'),
+         url('../fonts/raleway_heavy.ttf') format('truetype'),
+         url('../fonts/raleway_heavy.svg#raleway_heavy') format('svg');
+}

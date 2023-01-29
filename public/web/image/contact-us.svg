@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1080" height="1922" viewBox="0 0 1080 1922">
+  <defs>
+    <clipPath id="clip-contact-us">
+      <rect width="1080" height="1922"/>
+    </clipPath>
+  </defs>
+  <g id="contact-us" clip-path="url(#clip-contact-us)">
+    <ellipse id="Ellipse_1" data-name="Ellipse 1" cx="446.855" cy="706.671" rx="446.855" ry="706.671" transform="matrix(0.966, 0.259, -0.259, 0.966, 831.271, 623.361)" fill="#60a1ff"/>
+  </g>
+</svg>

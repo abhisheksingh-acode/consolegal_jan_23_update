@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2653" height="1400" viewBox="0 0 2653 1400">
+  <g id="Group_1" data-name="Group 1" transform="translate(831 347)">
+    <g id="svg2" transform="translate(1465 136)">
+      <g id="Ellipse_7" data-name="Ellipse 7" transform="translate(-796 -483)" fill="#fff" stroke="#ff8649" stroke-width="20">
+        <ellipse cx="99" cy="98" rx="99" ry="98" stroke="none"/>
+        <ellipse cx="99" cy="98" rx="89" ry="88" fill="none"/>
+      </g>
+      <g id="Ellipse_8" data-name="Ellipse 8" transform="translate(-758 -442)" fill="#fff" stroke="#ff8649" stroke-width="20">
+        <ellipse cx="61" cy="57" rx="61" ry="57" stroke="none"/>
+        <ellipse cx="61" cy="57" rx="51" ry="47" fill="none"/>
+      </g>
+    </g>
+    <g id="svg1" transform="translate(-35 431)">
+      <g id="Ellipse_7-2" data-name="Ellipse 7" transform="translate(-796 -483)" fill="#fdfdfd" stroke="#ffce49" stroke-width="20">
+        <ellipse cx="99" cy="98" rx="99" ry="98" stroke="none"/>
+        <ellipse cx="99" cy="98" rx="89" ry="88" fill="none"/>
+      </g>
+      <g id="Ellipse_8-2" data-name="Ellipse 8" transform="translate(-758 -442)" fill="#fdfdfd" stroke="#ffce49" stroke-width="20">
+        <ellipse cx="61" cy="57" rx="61" ry="57" stroke="none"/>
+        <ellipse cx="61" cy="57" rx="51" ry="47" fill="none"/>
+      </g>
+    </g>
+    <g id="svg3" transform="translate(1707 691)">
+      <ellipse id="Ellipse_7-3" data-name="Ellipse 7" cx="67.5" cy="69" rx="67.5" ry="69" transform="translate(-796 -483)" fill="#ff8649"/>
+    </g>
+    <g id="svg4" transform="translate(1376 980)">
+      <ellipse id="Ellipse_7-4" data-name="Ellipse 7" cx="44.5" cy="43.5" rx="44.5" ry="43.5" transform="translate(-796 -483)" fill="#ff4949"/>
+    </g>
+    <g id="svg5" transform="translate(-53 1029)">
+      <g id="Rectangle_1" data-name="Rectangle 1" transform="translate(-697 -156)" fill="#fff" stroke="#ff5f25" stroke-width="23">
+        <rect width="180" height="180" stroke="none"/>
+        <rect x="11.5" y="11.5" width="157" height="157" fill="none"/>
+      </g>
+      <g id="Rectangle_2" data-name="Rectangle 2" transform="translate(-658 -117)" fill="#fff" stroke="#ff5f25" stroke-width="23">
+        <rect width="100" height="100" stroke="none"/>
+        <rect x="11.5" y="11.5" width="77" height="77" fill="none"/>
+      </g>
+    </g>
+    <g id="svg6" transform="translate(2339 849)">
+      <g id="Rectangle_1-2" data-name="Rectangle 1" transform="translate(-697 -156)" fill="#fff" stroke="#ffcd25" stroke-width="23">
+        <rect width="180" height="180" stroke="none"/>
+        <rect x="11.5" y="11.5" width="157" height="157" fill="none"/>
+      </g>
+      <g id="Rectangle_2-2" data-name="Rectangle 2" transform="translate(-658 -117)" fill="#fff" stroke="#ffcd25" stroke-width="23">
+        <rect width="100" height="100" stroke="none"/>
+        <rect x="11.5" y="11.5" width="77" height="77" fill="none"/>
+      </g>
+    </g>
+  </g>
+</svg>
