@@ -47,9 +47,11 @@
                       @if($assign->order_id == $order->id)
                       @foreach ($form as $name)
                       @if($assign->form_name_id == $name->id)
+                      @once
                       <a class='btn btn-info btn-xs submit-form-btn' data-order-id="{{$order->id}}" data-form-id="{{$name->id}}" data-toggle="modal" data-target="#exampleModal1" href="#">
                         Submit Your Form
                       </a>
+                      @endonce
                       @endif
                       @endforeach
                       @endif

@@ -69,6 +69,7 @@
                   <th>Query</th>
                   <th>Phone No</th>
                   <th>From</th>
+                  <th>Status</th>
                   <th class="nowrap">Service</th>
                   <th class="text-nowrap">Enquiry Date</th>
                   <th class="text-center ">Message</th>
@@ -89,6 +90,9 @@
                @else
                {{$list->agent->user_id}}
                @endif
+               <td>
+                  {{$list->isUser?"onboard":"pending"}}
+               </td>
                <td>
                   {{$list->service->name}}
                </td>

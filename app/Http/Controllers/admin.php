@@ -844,6 +844,10 @@ class admin extends Controller
       $assign->status = "1";
       $assign->save();
 
+
+      Order::find($assign->order_id)->update(["form_submitted" => 0]);
+
+
       if ($assign) {
          $body = "Dear $user->name, Your form has been assigned to order id $req->id. Kindly fill up your details. By Consolegal";
          EmailTrait::confirm($user->email, $body, "Profile update", $user->name);

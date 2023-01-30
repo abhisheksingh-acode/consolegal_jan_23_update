@@ -48,10 +48,6 @@
                <label for="inputEmail4" class="form-label">Full Name</label>
                <input type="text" name="name" class="form-control" id="inputEmail4" required>
             </div>
-            <!-- <div class="col-md-6">
-               <label for="inputPassword4" class="form-label">Last Name</label>
-               <input type="text" class="form-control" id="inputPassword4">
-            </div> -->
             <div class="col-6">
                <label for="inputAddress" class="form-label">E-mail</label>
                <input type="email" name="email" class="form-control" id="inputAddress" placeholder="xxxx@mail.com" required>
@@ -68,8 +64,12 @@
             </div>
             <div class="col-12 p-4 ps-0">
                <button type="submit" class="btn an-btn">Send Message</button>
+               <p id="notify"></p>
             </div>
-            <p id="notify"></p>
+
+            <div class="col-12 text-center">
+               <img src="{{asset('image/razorpay.png')}}" alt="razorpay" width="auto" height="70px">
+            </div>
          </form>
       </div>
    </div>

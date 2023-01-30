@@ -5,12 +5,12 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
-a{
-    text-decoration:none;
-    color:inherit;
+a {
+    text-decoration: none;
+    color: inherit;
 }
-a:hover{
-    color:inherit;
+a:hover {
+    color: inherit;
 }
 
 .theme-blue {
@@ -100,24 +100,49 @@ h2 {
     padding-top: 0;
 }
 
+.sticky-wp,
+.sticky-phone-alt {
+    position: fixed !important;
+    bottom: 10px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 25px;
+    color: #fff;
+    z-index: 99;
+}
+
+.sticky-wp{
+ right: 20px;
+ background-color: #24b663;
+}
+.sticky-phone-alt{
+  left: 20px;
+  font-size: 20px;
+  background-color: #1a568f;
+}
+
 
 section.tqpage .thanku {
     text-align: center;
     /* padding-top: 20%; */
-  }
-  
-  section.tqpage .thanku h2 {
+}
+
+section.tqpage .thanku h2 {
     font-size: 80px;
     color: #000;
-  }
-  section.tqpage .thanku p {
+}
+section.tqpage .thanku p {
     padding-left: 150px;
     padding-right: 150px;
-  }
-  section.tqpage .thanku i.fa.fa-check {
+}
+section.tqpage .thanku i.fa.fa-check {
     font-size: 80px;
     color: #24b663;
-  }
+}
 
 .navbar .navbar-nav .nav-link {
     color: black;
@@ -2263,7 +2288,7 @@ header::after {
 
 .scroll-section {
     scroll-margin-top: 150px;
-    margin-bottom:30px;
+    margin-bottom: 30px;
 }
 .scrollspy-custom .scroll-section .section-title {
     font-size: 26px;

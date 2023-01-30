@@ -409,12 +409,12 @@ class users extends Controller
 
       $assign = assigned::where("user_id", $user_id)
          ->where("submitted", "0")
-         ->orderBy("id", "DESC")
-         ->limit(1)->get();
+         ->orderBy("created_at", "desc")
+         ->get();
 
       $service = services::all();
 
-      $forms = form_name::all();
+      $forms = form_name::orderBy("id","desc")->get();
 
       $form_content = form_content::where("id", $user_id)->get();
 

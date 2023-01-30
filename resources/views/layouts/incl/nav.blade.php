@@ -227,3 +227,6 @@
    </div>
 
 </nav>
+
+   <a href="tel:{{config('app.phone')}}" class="sticky-phone-alt"><i class="fas fa-phone-alt"></i></a>
+   <a href="{{config('app.whatsapp')}}" class="sticky-wp"><i class="fab fa-whatsapp"></i></a>
