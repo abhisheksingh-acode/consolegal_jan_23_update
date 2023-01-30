@@ -69,18 +69,7 @@
                 </tbody>
             </table>
             {{$user->links()}}
-
         </div>
-
-
-
-
-
-
-
-
-
-
     </div>
     <!--  END CONTENT AREA  -->
 

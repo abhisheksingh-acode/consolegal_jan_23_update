@@ -4,17 +4,17 @@
 
 @section('content')
 <section id="blog-read-home">
-   <h3 class="main-title">Blog post title - {{$blog->title}}</h3>
+   <h3 class="main-title">{{$blog->title}}</h3>
 
    <div class="author">
       <div class="pic"><img src="{{ asset('web/image')}}/profile.png" alt="" class="img-fluid"></div>
       <div class="detail">
          <div class="name">Author</div>
-         <div class="profile">Admin (Consolegal)</div>
+         <div class="profile">Admin (ConsoLegal)</div>
       </div>
    </div>
    <div class="img-container">
-      <img src="{{asset('storage')}}/{{$blog->image}}" alt="" class="">
+      <img src="{{asset('storage')}}/{{$blog->banner}}" alt="blog-banner" />
    </div>
 
    <div class="content-section container-md row mx-auto">

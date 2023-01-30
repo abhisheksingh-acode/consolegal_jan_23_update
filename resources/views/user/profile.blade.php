@@ -6,6 +6,9 @@
 @section('content')
           <!-- ACCOUNT DETAILS START -->
           <div class="tab-pane active text-style" id="tab1">
+            <div class="d-flex justify-content-end align-items-center">
+               <a href="{{route('user.kyc.create')}}" class="btn-sm btn-primary">Upload Kyc</a>
+            </div>
             <form class="login-form" action="{{route('user.profile.update')}}" method="post">
               @csrf
               <div class="row rightcol">

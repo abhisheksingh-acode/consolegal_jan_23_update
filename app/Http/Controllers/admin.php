@@ -859,7 +859,7 @@ class admin extends Controller
 
       if ($assign) {
          $body = "Dear $user->name, Your form has been assigned to order id $req->id. Kindly fill up your details. By Consolegal";
-         EmailTrait::confirm($user->email, $body, "Profile update", $user->name);
+         EmailTrait::confirm($user->email, $body, "Form Assigned", $user->name);
 
          SmsTrait::assign($user->phone, $req->id, $user->name);
       }
@@ -988,24 +988,30 @@ class admin extends Controller
                $user = User::find($order->fran_id);
             }
 
+
+            $subject = "";
             switch ($req->status) {
                case '1':
-                  $body = "Dear $user->name, Your Order id $order->id has been in pending. By Consolegal";
+                  $subject = "Order Form Submitted";
+                  $body = "Dear $user->name, Your Order id $order->id has been in submitted. By Consolegal";
                   break;
                case '2':
+                  $subject = "Order InProcess";
                   $body = "Dear $user->name, Your Order id $order->id has been in process. By Consolegal";
                   break;
                case '3':
+                  $subject = "Order Form Re-Assigned";
                   $body = "Dear $user->name, Some of your details are not clear, So fill the details out in the Re-Assigned Form. By Consolegal
                   ";
                   SmsTrait::reassign($user->phone, $user->name);
                   break;
                case '4':
+                  $subject = "Order Completed";
                   $body = "Dear $user->name, Your Order id $order->id has been completed. Kindly find the documents from your account. By Consolegal";
                   SmsTrait::order_complete($user->phone, $order->id, $user->name);
                   break;
             }
-            EmailTrait::confirm($user->email, $body, "Profile update", $user->name, $user->phone);
+            EmailTrait::confirm($user->email, $body, $subject, $user->name, $user->phone);
 
             return $order;
          }
@@ -1292,6 +1298,16 @@ class admin extends Controller
          $blogs->image = $image_file;
       }
 
+      if ($req->banner) {
+
+         $image_file = time() . '.' . $req->file('banner')->extension();
+
+         // $data = $req->file('file')->storeAs('/', $image_file);
+         $data = $req->file('banner')->move(public_path('storage'), $image_file);
+
+         $blogs->banner = $image_file;
+      }
+
 
       $blogs->save();
 
@@ -1326,6 +1342,16 @@ class admin extends Controller
          $data = $req->file('file')->move(public_path('storage'), $image_file);
 
          $blogs->image = $image_file;
+      }
+
+      if (strlen($req->banner) > 3) {
+
+         $image_file = time() . '.' . $req->file('banner')->extension();
+
+         // $data = $req->file('file')->storeAs('/', $image_file);
+         $data = $req->file('banner')->move(public_path('storage'), $image_file);
+
+         $blogs->banner = $image_file;
       }
 
       $blogs->save();

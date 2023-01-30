@@ -98,11 +98,17 @@
                         @if(isset($data))
                         <img src="{{asset('storage')}}/{{$data->image}}" alt="" width="100px" height="100px">
                         @endif
+                        <hr>
+                        <h4>Banner <small class="text-info">(866px × 300px)</small></h4>
+                        <!-- <form action="/action_page.php"> -->
+                        <input type="file" id="myBanner" name="banner"><br>
+                        @if(isset($data))
+                        <img class="mt-2" src="{{asset('storage')}}/{{$data->banner}}" alt="" width="300px" height="auto">
+                        @endif
                         <br>
                         <input type="submit" value="Save">
                         </form>
                     </div>
-
                 </div>
 
             </div>

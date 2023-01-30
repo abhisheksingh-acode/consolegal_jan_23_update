@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\DB;
 // use DB;
 
 use App\Http\Traits\WalletTrait;
+use App\Models\Kyc;
 use App\Models\payment;
 use App\Models\Refer;
 use App\Models\service_done;
@@ -35,6 +36,15 @@ class users extends Controller
    //     return "jdslksdfj";
    // }
 
+   function kyc(Request $req)
+   {
+      $user = $req->session()->get("user");
+      $user_id = $req->session()->get("user")->id;
+
+      $kyc = Kyc::where(["user_type" => "user", "user_id" => $user_id])->first();
+
+      return view('user.kyc', compact('user', 'kyc'));
+   }
 
    function users_get(Request $req)
    {
@@ -43,7 +53,7 @@ class users extends Controller
          ->orWhere("name", "LIKE", '%' . $key . '%')
          ->orWhere("email", "LIKE", '%' . $key . '%')
          ->orWhere("phone", "LIKE", '%' . $key . '%')
-         ->orderBy("id","DESC")
+         ->orderBy("id", "DESC")
          ->simplePaginate(10);
 
       return view("all_user", ['user' => $data]);
@@ -53,8 +63,9 @@ class users extends Controller
    function users_profile(Request $req)
    {
       $user = User::find($req->id);
+      $kyc = Kyc::where(["user_type" => "user", "user_id" => $user->id])->first();
 
-      return view("user_profile", ['data' => $user, 'type' => 'user']);
+      return view("user_profile", ['data' => $user, 'type' => 'user', 'kyc' => $kyc]);
    }
 
 
@@ -344,7 +355,7 @@ class users extends Controller
          throw $th;
       }
    }
-   
+
    function payment(Request $req)
    {
       try {
@@ -415,7 +426,7 @@ class users extends Controller
 
       $service = services::all();
 
-      $forms = form_name::orderBy("id","desc")->get();
+      $forms = form_name::orderBy("id", "desc")->get();
 
       $form_content = form_content::where("id", $user_id)->get();
 

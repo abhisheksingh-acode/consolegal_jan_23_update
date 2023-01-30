@@ -9,6 +9,8 @@ class Kyc extends Model
 {
     use HasFactory;
 
+    public $table = "kyc";
+
     public $fillable = [
         "user_type", "user_id", "pan", "aadhaar", "other_label", "other_doc", "photo", "created_at", "updated_at"
     ];

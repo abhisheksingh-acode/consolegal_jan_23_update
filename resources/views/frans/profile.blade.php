@@ -6,6 +6,9 @@
 @section('content')
           <!-- ACCOUNT DETAILS START -->
           <div class="tab-pane active text-style" id="tab1">
+            <div class="d-flex justify-content-end align-items-center">
+              <a href="{{route('franchise.kyc.create')}}" class="btn-sm btn-primary">Upload Kyc</a>
+           </div>
             <form class="login-form" id="profile-form" action="/franchise/update" method="post">
               @csrf
               <div class="row rightcol">

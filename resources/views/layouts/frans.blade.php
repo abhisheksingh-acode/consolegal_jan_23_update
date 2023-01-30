@@ -80,6 +80,8 @@
        </div> 
        <div class="col-md-10">
          <div class="tab-content box-shd">
+          <h2 class="text-danger text-center">{{Session::get('error')}}</h2>
+          <h2 class="text-success text-center">{{Session::get('success')}}</h2>
 
    @yield('content')
 

@@ -22,6 +22,7 @@ use App\Models\service_done;
 
 use App\Http\Traits\EmailTrait;
 use App\Http\Traits\WalletTrait;
+use App\Models\Kyc;
 use App\Models\Lead;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\DB;
@@ -97,6 +98,14 @@ class franchise extends Controller
       }
    }
 
+   function kyc(Request $req){
+      $frans = $req->session()->get("frans");
+      $frans_id = $frans->id;
+
+      $kyc = Kyc::where(["user_type" => "frans", "user_id" => $frans_id])->first();
+
+      return view('frans.kyc', compact('frans','kyc'));
+   }
 
    function orders(Request $req)
    {
@@ -188,12 +197,6 @@ class franchise extends Controller
       return View("frans.lead", compact('data', 'frans','services'));
    }
 
-   function kyc(Request $req)
-   {
-      $frans = $req->session()->get("frans");
-      $frans_id = $frans->id;
-   }
-
    function franchise_get(Request $req)
    {
 
@@ -219,7 +222,9 @@ class franchise extends Controller
          return ["user" => $user];
       }
 
-      return view("user_profile", ['data' => $user, 'type' => 'franchise']);
+      $kyc = Kyc::where(["user_type" => "frans", "user_id" => $user->id])->first();
+
+      return view("user_profile", ['data' => $user, 'type' => 'franchise', 'kyc' => $kyc]);
    }
 
 

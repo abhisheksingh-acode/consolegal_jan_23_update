@@ -18,6 +18,7 @@ use App\Http\Controllers\webController;
 use App\Http\Controllers\PayController;
 use App\Http\Controllers\CareerController;
 use App\Http\Controllers\JoinAppController;
+use App\Http\Controllers\KycController;
 use Barryvdh\DomPDF\Facade;
 
 use App\Http\Controllers\RazorpayPaymentController;
@@ -343,6 +344,10 @@ Route::group(['middleware' => 'users_m'], function () {
    Route::get(("/users/payment"), [users::class, 'payment'])->name("user.dashboard.payment");
    Route::get(("/users/refer-earn"), [users::class, 'refer_earn'])->name("user.dashboard.refer_earn");
 
+   Route::get(("/users/kyc"), [users::class, 'kyc'])->name("user.kyc.create");
+   Route::post(("/users/kyc/create"), [KycController::class, 'create'])->name("user.kyc.upload");
+   Route::post(("/users/kyc/update/{id}"), [KycController::class, 'update'])->name("user.kyc.update");
+
 
 
    Route::get(("/users/services"), [users::class, 'services']);
@@ -404,6 +409,11 @@ Route::group(["middleware" => "frans_auth"], function () {
    Route::post("/franchise/leads/create", [leads::class, 'leads_post'])->name("franchise.dashboard.leads.create");
 
 
+   Route::get(("/franchise/kyc"), [franchise::class, 'kyc'])->name("franchise.kyc.create");
+   Route::post(("/franchise/kyc/create"), [KycController::class, 'create'])->name("franchise.kyc.upload");
+   Route::post(("/franchise/kyc/update/{id}"), [KycController::class, 'update'])->name("franchise.kyc.update");
+
+
 
    Route::post("/franchise/form_submit", [franchise::class, 'submit_form']);
 
@@ -434,7 +444,8 @@ Route::group(["middleware" => "agents_auth"], function () {
    Route::get("/agents/leads/all", [agents::class, 'leads_all'])->name("agent.leads");
    Route::post("/agents/leads", [leads::class, 'leads_post']);  //dashboard redirectz
 
-
+   Route::get(("/agents/kyc"), [KycController::class, 'index'])->name("agents.kyc.upload");
+   Route::post(("/agents/kyc"), [KycController::class, 'create'])->name("agents.kyc.upload");
 });
 
 

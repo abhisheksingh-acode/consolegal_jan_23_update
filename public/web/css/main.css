@@ -2835,7 +2835,7 @@ header::after {
 
 #blog-read-home .img-container img {
     width: 100%;
-    height: auto;
+    height: 300px;
 }
 
 #blog-read-home .content-section .topic-title {
