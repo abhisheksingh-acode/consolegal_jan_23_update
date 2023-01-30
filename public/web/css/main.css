@@ -3629,6 +3629,8 @@ h3.title {
         height: -moz-fit-content;
         height: fit-content;
     }
+
+   
 }
 
 @media screen and (max-width: 576px) {
@@ -3823,6 +3825,7 @@ h3.title {
         -webkit-box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.226);
         box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.226);
         overflow: scroll;
+        top: 85px;
         /* position: sticky; */
     }
     #blogs-category .category-list ul {

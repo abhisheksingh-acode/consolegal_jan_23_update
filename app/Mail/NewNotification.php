@@ -21,7 +21,7 @@ class NewNotification extends Mailable
     {
         //
 
-        $this->detail = $detail
+        $this->detail = $detail;
     }
 
     /**

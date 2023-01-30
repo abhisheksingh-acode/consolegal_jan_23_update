@@ -86,7 +86,7 @@
                   </ul>
                   @endforeach
                </td>
-               <td>{{$list->status}}</td>
+               <td>{{$list->status?"active":"inactive"}}</td>
                <td class="text-center"><a href="/admin/coupons/delete?id={{$list->id}}" class="text-danger"><i class="fas fa-remove text-danger fa-2x"></i></a></td>
 
             </tr>
@@ -155,6 +155,11 @@
                   </select>
 
 
+               </div>
+
+               <div class="form-group">
+                  <label for="exampleInputEmail1">Expire Date</label>
+                  <input type="date" name="expired_at" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                </div>
 
 

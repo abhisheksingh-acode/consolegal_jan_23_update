@@ -19,6 +19,7 @@ use App\Http\Traits\WalletTrait;
 use App\Http\Traits\EmailTrait;
 use App\Models\Coupon;
 use App\Models\Frans;
+use App\Models\Lead;
 use App\Models\Order;
 use App\Models\wallet_history;
 
@@ -66,6 +67,13 @@ class orders extends Controller
 
       return view("add_order_page", ['data' => $data]);
    }
+   function lead_add_order($id)
+   {
+      $services = services::all();
+      $user = Lead::find($id);
+
+      return view("convert_lead", compact('services', 'user'));
+   }
 
 
    function order_post_admin(Request $req)
@@ -88,7 +96,7 @@ class orders extends Controller
          $orders->service_id = $req->service_id;
          $orders->status = $req->status || 0;
          $orders->payment_mode = $req->payment_mode;
-         $orders->payment_id = $req->payment_id??'';
+         $orders->payment_id = $req->payment_id??'null';
          $orders->save();
 
 

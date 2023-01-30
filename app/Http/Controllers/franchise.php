@@ -38,9 +38,9 @@ class franchise extends Controller
 
          $frans_id = $frans->id;
 
-         $pending = Order::where("fran_id", $frans_id)->where("form_submitted", '!=', 4)->simplePaginate(10);
+         $pending = Order::where("fran_id", $frans_id)->where("form_submitted", '!=', 4)->orderBy("id", "desc")->simplePaginate(10);
 
-         $complete = Order::where("fran_id", $frans_id)->where("form_submitted", 4)->simplePaginate(10);
+         $complete = Order::where("fran_id", $frans_id)->where("form_submitted", 4)->orderBy("id", "desc")->simplePaginate(10);
 
          $wallet = Wallet::where("fran_id", $frans_id)->first();
 
@@ -54,11 +54,11 @@ class franchise extends Controller
 
          $documents = service_done::all();
 
-         $assign = assigned::where("fran_id", $frans_id)->where("submitted", "0")->get();
+         $assign = assigned::where("fran_id", $frans_id)->where("submitted", "0")->orderBy("created_at", "desc")->get();
 
          $service = services::all();
 
-         $forms = form_name::all();
+         $forms = form_name::orderBy("id","desc")->get();
 
          $form_content = form_content::where("id", $frans_id)->get();
 
@@ -172,7 +172,7 @@ class franchise extends Controller
       $frans_id = $frans->id;
       $service = services::all();
 
-      $leads = Lead::where(["fran_id" => $frans_id])->simplePaginate(40);
+      $leads = Lead::where(["fran_id" => $frans_id])->orderBy("id","DESC")->simplePaginate(40);
 
       return View("frans.leads", compact('leads', 'frans','service'));
    }
@@ -202,6 +202,7 @@ class franchise extends Controller
          ->orWhere("name", "LIKE", '%' . $key . '%')
          ->orWhere("email", "LIKE", '%' . $key . '%')
          ->orWhere("phone", "LIKE", '%' . $key . '%')
+         ->orderBy("id","DESC")
          ->simplePaginate(10);
 
 

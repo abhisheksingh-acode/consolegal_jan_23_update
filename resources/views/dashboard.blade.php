@@ -31,36 +31,35 @@
             </form>
          </div>
          <div class="allform-page allorder">
-         <div class="row flex-wrap">
+         <form action="{{route('admin.dashboard.index')}}" method="GET" class="row flex-wrap">
 
             <div class="col-md-4 col-6">
                   <label>Search</label><br>
                   <div class="search-bar">
-                      @csrf
-                     <input type="text" class="form-control query search-form-control  ml-lg-auto" placeholder="Search...">
+                     <input type="text" name="search" class="form-control query search-form-control  ml-lg-auto" placeholder="Search...">
                   </div>
             </div>
 
             <div class="col-md-6 col-6">
                <div class="datefrom">
                      <label for="from">From</label><br>
-                     <input type="date" class="from" id="" name="birthdaytime">
+                     <input type="date" class="from" name="from">
 
                </div>
                <div class="dateto">
                         <label for="to">To</label><br>
-                        <input type="date" id="" class="to" name="to">
+                        <input type="date" class="to" name="to">
                </div>
 
             </div>
             
            <div class="col-md-2 col-6">
                <div class="dropdown form">
-                  <button onclick="filter()" class="dropbtn">Filters</button>
+                  <button type="submit" class="dropbtn">Filters</button>
                </div>
             </div>
 
-         </div>
+         </form>
          <table class="table table-striped custab">
             <thead>
                <tr>
@@ -72,6 +71,7 @@
                   <th>Status</th>
                   <th class="nowrap">Service</th>
                   <th class="text-nowrap">Enquiry Date</th>
+                  <th class="text-center ">Create Order</th>
                   <th class="text-center ">Message</th>
                </tr>
             </thead>
@@ -98,7 +98,13 @@
                </td>
                <td>{{$list->created_at}}</td>
                <td class="text-center">
-                  <input data-toggle="modal" name="{{$list->email}}" onclick="loadEmail(this.name)" data-target="#exampleModal1" type="submit" value="Email">
+                  @if(!$list->isUser)
+                  <a href="{{route('admint.lead.order',['id' => $list->id])}}" title="convert lead to order" class="btn btn-info rounded-0">Create</a>
+                  @endif
+               </td>
+               <td class="text-center">
+                  
+                  <input data-toggle="modal" class="m-0" name="{{$list->email}}" onclick="loadEmail(this.name)" data-target="#exampleModal1" type="submit" value="Email">
                </td>
 
             </tr>

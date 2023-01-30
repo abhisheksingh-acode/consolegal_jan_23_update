@@ -355,35 +355,35 @@ class admin extends Controller
 
 
    //   dashboard if session admin 
-   function dashboard()
+   function dashboard(Request $req)
    {
       try {
 
-         $leads = Lead::select('leads.*')->orderBy("id", "desc")
-            ->simplePaginate(10);
+         $leads = Lead::orWhere('name', 'like', '%' . $req->query('search') . '%')->orderBy("id", "desc")
+            ->simplePaginate(30);
 
-         $data = collect();
-         foreach ($leads as $lead) {
+         // $data = collect();
+         // foreach ($leads as $lead) {
 
-            if ($lead->from == 'agents') {
-               $lead['lead_email'] = DB::table('agents')->find($lead->fran_id)->email ?? 'not exist';
-               $data->push($lead);
-            } else if ($lead->from == 'user') {
-
-
-               $lead['lead_email'] = DB::table('frans')->find($lead->fran_id)->email ?? 'not exist';
+         //    if ($lead->from == 'agents') {
+         //       $lead['lead_email'] = DB::table('agents')->find($lead->fran_id)->email ?? 'not exist';
+         //       $data->push($lead);
+         //    } else if ($lead->from == 'user') {
 
 
-               $data->push($lead);
-            } else {
-               $data->push($lead);
-            }
-         }
+         //       $lead['lead_email'] = DB::table('frans')->find($lead->fran_id)->email ?? 'not exist';
+
+
+         //       $data->push($lead);
+         //    } else {
+         //       $data->push($lead);
+         //    }
+         // }
 
 
 
-         $data = $this->paginate($data, 10);
-         //  return $data;
+         // $data = $this->paginate($data, 10);
+         // //  return $data;
 
          $services = services::all();
 
@@ -680,32 +680,41 @@ class admin extends Controller
    //---------------------form-----------------------
    function form_name(Request $req)
    {
-      try {
-         $data = form_name::orderBy('id', 'desc')->get();
+      $data = form_name::orderBy('id', 'desc');
 
-         $services = services::all();
-
-         $assign = assigned::all();
-
-         // return ['forms' => $data, 'services' => $services];
-         return view("all_forms", ['forms' => $data, 'services' => $services, 'assign' => $assign]);
-      } catch (\Throwable $th) {
-         //throw $th;
+      if ($req->query('service')) {
+         $data = $data->where("service_id", '=', $req->query('service'));
       }
+      if ($req->query('search')) {
+         $data = $data->where('name', 'like', '%' . $req->query('search') . '%');
+      }
+
+      $data = $data->get();
+
+      $services = services::all();
+
+      $assign = assigned::all();
+
+      // return ['forms' => $data, 'services' => $services];
+      return view("all_forms", ['forms' => $data, 'services' => $services, 'assign' => $assign]);
    }
 
    function form_add_get(Request $req)
    {
-      try {
-         $data = DB::select("select * from services");
+      $data = services::all();
 
-         $forms = form_name::orderBy("id", "desc")->get();
-         $forms_content = form_content::all();
+      $forms = form_name::orderBy("id", "desc")->where('name', 'like', '%' . $req->query('search') . '%');
 
-         return view("add_form", ['services' => $data, 'forms' => $forms, 'form_content' => $forms_content]);
-      } catch (\Throwable $th) {
-         //throw $th;
+
+      if ($req->query('service')) {
+         $forms = $forms->where("service_id", '=', $req->query('service'));
       }
+
+      $forms = $forms->get();
+
+      $forms_content = form_content::all();
+
+      return view("add_form", ['services' => $data, 'forms' => $forms, 'form_content' => $forms_content]);
    }
 
    function form_name_post(Request $req)
@@ -984,7 +993,7 @@ class admin extends Controller
                   $body = "Dear $user->name, Your Order id $order->id has been in pending. By Consolegal";
                   break;
                case '2':
-                  $body = "Dear $user->name, Your Order id $order->id has been approved. By Consolegal";
+                  $body = "Dear $user->name, Your Order id $order->id has been in process. By Consolegal";
                   break;
                case '3':
                   $body = "Dear $user->name, Some of your details are not clear, So fill the details out in the Re-Assigned Form. By Consolegal
@@ -1098,6 +1107,7 @@ class admin extends Controller
             $data->code = $req->code;
             $data->type = $req->type;
             $data->method = $req->method;
+            $data->expired_at = $req->expired_at;
             $data->amount = $req->amount;
             $data->redeem_count = "0";
 
@@ -1136,6 +1146,9 @@ class admin extends Controller
          }
          if ($req->redeem_count) {
             $data->redeem_count = $req->redeem_count;
+         }
+         if ($req->expired_at) {
+            $data->expired_at = $req->expired_at;
          }
          if ($req->service_id) {
             $data->service_id = $req->service_id;

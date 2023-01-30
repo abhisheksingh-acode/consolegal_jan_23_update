@@ -43,6 +43,7 @@ class users extends Controller
          ->orWhere("name", "LIKE", '%' . $key . '%')
          ->orWhere("email", "LIKE", '%' . $key . '%')
          ->orWhere("phone", "LIKE", '%' . $key . '%')
+         ->orderBy("id","DESC")
          ->simplePaginate(10);
 
       return view("all_user", ['user' => $data]);

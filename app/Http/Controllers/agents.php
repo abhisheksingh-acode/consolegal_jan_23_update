@@ -54,7 +54,7 @@ class agents extends Controller
    function leads_all(Request $req)
    {
       $id = $req->session()->get("agents")->id;
-      $data = Lead::where("from", "agents")->where("agent_id", $id)->simplePaginate(5);
+      $data = Lead::where("from", "agents")->orderBy("id","DESC")->where("agent_id", $id)->simplePaginate(5);
       $service = services::all();
 
 

@@ -53,7 +53,7 @@ trait EmailTrait
 
          $to = $email;
          // \Mail::to($to)->send(new \App\Mail\email($detail));
-         \Mail::to($to)->send(new NewNotification($detail));
+         Mail::to($to)->send(new NewNotification($detail));
 
          return $status = ["email" => "email sent to $to"];
       } catch (\Throwable $th) {

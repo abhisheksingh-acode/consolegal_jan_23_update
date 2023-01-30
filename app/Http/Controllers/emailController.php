@@ -19,7 +19,7 @@ class emailController extends Controller
         if ($req->email && $req->body) {
             $email  = $req->email;
             $body   = $req->body;
-            $status[] =  EmailTrait::confirm($email, $body, "custom");
+            $status[] =  EmailTrait::confirm($email, $body, "Order Update");
         } else {
             $status[] = ["email" => "no email request"];
         }

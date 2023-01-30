@@ -65,6 +65,32 @@
                     <span class="glyphicon glyphicon-edit"></span> Add Form<i class="fa fa-plus pl-3" aria-hidden="true"></i></a>
             </div>
 
+            <form action="{{route('admin.forms.add')}}" method="get" class="row mb-4 flex-wrap align-item-center">
+                <div class="col-md-5 col-8">
+                      <div class="search-bar">
+                         <input type="text" name="search" class="form-control query search-form-control  ml-lg-auto" placeholder="Search...">
+                      </div>
+                </div>
+                <div class="col-md-5 col-4">
+                      <div class="search-bar">
+                         <select class="form-control" name="service">
+                            <option value="">select</option>
+                            @foreach ($services as $item)
+                            <option value="{{$item->id}}">{{$item->name}}</option>
+                            @endforeach
+                         </select>
+                      </div>
+                </div>
+                
+               <div class="col-md-2 col-4">
+                   <div class="dropdown d-flex align-item-center">
+                      <button type="submit" class="btn btn-info btn-xs">Filters</button>
+                   </div>
+                </div>
+    
+             </form>
+
+
             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                 @php($nos = 0)
                 @foreach ($forms as $form)

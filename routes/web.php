@@ -139,7 +139,7 @@ Route::get("/fran/leads/export", [ExportController::class, 'fran_lead'])->name('
 
 Route::group(['middleware' => 'admin_auth'], function () {
 
-   Route::get("/admin/dashboard", [admin::class, 'dashboard']);
+   Route::get("/admin/dashboard", [admin::class, 'dashboard'])->name('admin.dashboard.index');
 
    Route::post("/admin/add", [admin::class, 'admin_add']);  // add new admin
 
@@ -150,6 +150,7 @@ Route::group(['middleware' => 'admin_auth'], function () {
    // admin order function 
    Route::get("/admin/orders", [orders::class, "orders_get"]);
    Route::get("/admin/orders/add", [orders::class, "orders_add"]);
+   Route::get("/admin/orders/add/{id}", [orders::class, "lead_add_order"])->name("admint.lead.order");
 
    Route::get("/admin/orders/export", [ExportController::class, 'order'])->name('export.orders');
 
@@ -200,9 +201,9 @@ Route::group(['middleware' => 'admin_auth'], function () {
 
    // form admin control 
 
-   Route::get("/admin/services/forms/all", [admin::class, 'form_name']);
+   Route::get("/admin/services/forms/all", [admin::class, 'form_name'])->name("admin.forms.index");
 
-   Route::get("/admin/services/forms/add", [admin::class, 'form_add_get']);
+   Route::get("/admin/services/forms/add", [admin::class, 'form_add_get'])->name("admin.forms.add");
 
    Route::post("/admin/services/forms/post", [admin::class, 'form_name_post']);
 

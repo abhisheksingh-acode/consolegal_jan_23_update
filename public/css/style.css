@@ -685,7 +685,7 @@ ul.navbar-item.flex-row.ml-md-auto {
     /* overflow: hidden; */
 }
 #sidebar ul.menu-categories.ps {
-    height: calc(100vh - 107px) !important;
+    height: calc(100vh - 165px) !important;
     margin-right: 0;
     padding-right: 22px;
     border-right: 1px solid #0e1726;

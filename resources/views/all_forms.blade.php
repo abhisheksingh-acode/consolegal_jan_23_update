@@ -68,6 +68,31 @@
                <span class="glyphicon glyphicon-edit"></span> Manage Form<i class="fa fa-plus pl-3" aria-hidden="true"></i></a>
          </div>
 
+         <form action="{{route('admin.forms.index')}}" method="get" class="row flex-wrap align-item-center">
+            <div class="col-md-4 col-4">
+                  <div class="search-bar">
+                     <input type="text" name="search" class="form-control query search-form-control  ml-lg-auto" placeholder="Search...">
+                  </div>
+            </div>
+            <div class="col-md-4 col-4">
+                  <div class="search-bar">
+                     <select class="form-control" name="service">
+                        <option value="">select</option>
+                        @foreach ($services as $item)
+                        <option value="{{$item->id}}">{{$item->name}}</option>
+                        @endforeach
+                     </select>
+                  </div>
+            </div>
+            
+           <div class="col-md-4 col-4">
+               <div class="dropdown d-flex align-item-center">
+                  <button type="submit" class="btn btn-info btn-xs">Filters</button>
+               </div>
+            </div>
+
+         </form>
+
          <table class="table table-striped custab">
             <thead>
                <tr>
