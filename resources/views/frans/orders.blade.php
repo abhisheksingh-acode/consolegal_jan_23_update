@@ -38,7 +38,7 @@
                     <td>{{$order->created_at}}</td>
                     <td class="text-uppercase fw-bold text-left">{{$order->payment_mode}}</td>
 
-                    <td>₹ {{$order->payment->amount??$order->service->price}}</td>
+                    <td>₹ {{$order->payment->amount??$order->service->f_price}}</td>
 
                     <td class="text-center">
                       <!-- in case assign or reassign  -->
@@ -98,7 +98,7 @@
                     <td>{{$order->created_at}}</td>
                     <td class="text-uppercase fw-bold text-left">{{$order->payment_mode}}</td>
                     <td>
-                      ₹ {{$order->payment->amount??$order->service->price}}
+                      ₹ {{$order->payment->amount??$order->service->f_price}}
                     </td>
                     <td class="text-center" id="file-btn">Download<br>
                       <a href="{{route("user.download.invoice",["id" => $order->id])}}"><i class="fa fa-download"></i></a>

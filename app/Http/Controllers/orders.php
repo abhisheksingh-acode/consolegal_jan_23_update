@@ -218,6 +218,21 @@ class orders extends Controller
    }
 
 
+   // function order_subtotal(Request $req){
+
+   //    $original_service_price = $req->service_price;
+
+   //    // apply wallet 
+   //    $wallet = $req->wallet_id;
+
+
+   //    // apply coupon
+   //    $coupon = $req->coupon;
+
+   //    return "price";
+   // }
+
+
    // final payment 
    function order_pay(Request $req)
    {

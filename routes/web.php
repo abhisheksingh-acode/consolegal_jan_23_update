@@ -374,12 +374,15 @@ Route::group(["middleware" =>  "OrderAuth"], function () {
    Route::post("/order", [orders::class, 'order_post']);  //send request for buy service
 
 
+   // Route::post("/order/subtotal", [orders::class, 'order_subtotal'])->name('order.subtotal');
+
    Route::post("/coupon/check", [RazorpayPaymentController::class, 'apply_coupon'])->name('coupon.check');
 
 
    Route::get('/razorpay-payment', [RazorpayPaymentController::class, 'index']);
 
    Route::post('/razorpay-payment', [RazorpayPaymentController::class, 'store']);
+   Route::post('/razorpay-payment/wallet', [RazorpayPaymentController::class, 'store_offline'])->name('order.payment.wallet');
 
    // form assigned 
    Route::post("/form/content", [users::class, "forms_content"]);

@@ -75,6 +75,74 @@ class RazorpayPaymentController extends Controller
    }
 
 
+   public function store_offline(Request $request)
+   {
+
+      $user = $request->session()->get('user');
+      $frans = $request->session()->get('frans');
+
+      if ($request->session()->has("user")) {
+         $user_id = $user->id;
+         $user = User::find($user_id);
+      } elseif ($request->session()->has("frans")) {
+         $user_id = $frans->id;
+         $user = Frans::find($user_id);
+      }
+
+      $input = $request->all();
+
+      
+      $orders = new Order;
+
+      if ($request->session()->has("frans")) {
+         $orders->fran_id = $user_id;
+      } elseif ($request->session()->has("user")) {
+         $orders->user_id = $user_id;
+      }
+      $orders->working_status = 1;
+      $orders->form_submitted = 0;
+      $orders->service_id = $request->service_id;
+
+      // if ($request->razorpay_payment_id) {
+         $orders->payment_mode = "wallet";
+         $orders->payment_id = "null";
+      // }
+      $orders->status = "1";
+
+      $orders->save();
+
+      if ($request->coupon > 0) {
+         $coupon = Coupon::where("id", $request->coupon)->first();
+         $coupon->redeem_count += 1;
+         $coupon->save();
+      }
+
+      // for user 
+      if ($request->wallet > 0) {
+         $wallet = WalletTrait::walletUpdate($request->wallet, "redeem", "debit", $user_id);
+      }
+
+      // credit royalty points
+      if ($request->session()->has('user') || $request->session()->has('frans')) {
+         if ($request->service_points > 0 || $request->service_points != null) {
+            $credit_royalty_points = WalletTrait::walletUpdate($request->service_points, "royalty", "credit", $user_id);
+
+            // if points credited 
+            $body = "Dear $user->email, Your Order id $orders->id has been confirmed and $request->service_points points credited to your wallet. By Consolegal";
+            EmailTrait::confirm($user->email, $body, "Profile update", $user->name);
+         } else {
+            $body = "Dear $user->email, Your Order id $orders->id has been confirmed. By Consolegal";
+            EmailTrait::confirm($user->email, $body, "Profile update", $user->name);
+         }
+
+         SmsTrait::order_confirm($user->phone, $orders->id, $user->name);
+      }
+
+      $request->session()->flash('success', 'Payment successful');
+      return ["data" => "success"];
+   }
+
+
    public function store(Request $request)
    {
 

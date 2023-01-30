@@ -247,9 +247,9 @@ class admin extends Controller
       }
    }
 
-   function user_create(Request $req)
-   {
-   }
+   // function user_create(Request $req)
+   // {
+   // }
 
 
    function agent_profile(Request $req)

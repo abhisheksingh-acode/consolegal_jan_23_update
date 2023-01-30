@@ -152,9 +152,9 @@
       let original = Number($("#payment").attr("data-ori-price"));
       $("[data-amount]").attr("data-amount", original * 100);
 
-      if ($()) {
+      // if ($()) {
 
-      }
+      // }
 
       $('#walletCheck').on('click', function() {
 
@@ -171,7 +171,11 @@
 
          if (this.checked) {
 
-            final = amount - wallet_avail_bal;
+            if(amount <= wallet_avail_bal){
+               final = amount - amount;
+            }else{
+               final = amount - wallet_avail_bal;
+            }
 
             $("#wallet_amount").attr("data-wallet", 0)
 
@@ -182,7 +186,13 @@
                $("#payment").html(final);
             }
          } else {
-            final = amount + Number("{{$wallet->amount}}");
+
+            if(amount <= wallet_avail_bal){
+               final = amount + original;
+            }else{
+               final = amount + Number("{{$wallet->amount}}");
+            }
+
             $("#payment").html(final);
 
 
@@ -208,7 +218,7 @@
       function apply_coupon(){
 
          if(coupon.name.length < 1){
-            alert('coupon code is empty')
+            // alert('coupon code is empty')
             return false
          }
 
@@ -229,7 +239,7 @@
 
                    coupon.final = Number($("#payment").html()) - coupon.amount;
 
-                   $("#payment").html(coupon.final);
+                   $("#payment").html(coupon.final > 0 ? coupon.final : 0);
                    
                    if(coupon.checked == false){
                       $(".apply_coupon_btn").text('remove').addClass('btn-dark');
@@ -238,7 +248,7 @@
                    $("[data-amount]").attr("data-amount", coupon.final * 100);
 
                }else{
-                  alert(data.msg);
+                  // alert(data.msg);
                   coupon.name = '';
                   coupon.amount = 0;
                   coupon.applied = false;
@@ -295,7 +305,9 @@
    </script>
    <script src="https://checkout.razorpay.com/v1/checkout.js">
    </script>
-   <script>
+   <script>   
+
+
       $('body').on('click', '#rzp-button1', function(e) {
          e.preventDefault();
 
@@ -314,6 +326,45 @@
          var coupon_id = coupon.id;
 
          var total_amount = amount * 100;
+
+
+         if(total_amount == 0){
+
+            $.ajaxSetup({
+                  headers: {
+                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                  }
+               });
+               $.ajax({
+                  type: 'POST',
+                  url: "/razorpay-payment/wallet",
+                  data: {
+                     amount: amount,
+                     service_points: "{{$points}}",
+                     service_price: "{{$price}}",
+                     service_id: "{{$service->id}}",
+                     coupon: coupon_id,
+                     wallet: wallet >= original ? original : wallet
+                  },
+                  beforeSend: function() {
+                     $("#rzp-button1").html("Loading...")
+                     $(".preloader-over").addClass("active")
+                  },
+                  success: function(data) {
+                     console.log(data);
+                     $('.amount').val('');
+                     location.href = "/order/success";
+                  },
+                  complete: function() {
+                     $("#rzp-button1").html("Place Order");
+                     $(".preloader-over").removeClass("active")
+                  }
+               });
+            return
+         }
+
+
+
          var options = {
             "key": "{{ env('RAZORPAY_KEY') }}", // Enter the Key ID generated from the Dashboard
             "amount": Number(total_amount), // Amount is in currency subunits. Default currency is INR. Hence, 10 refers to 1000 paise
