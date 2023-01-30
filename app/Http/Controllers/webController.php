@@ -182,7 +182,7 @@ class webController extends Controller
 
         $zip->close();
 
-        return response()->download($fileName);
+        return redirect("/$fileName");
     }
 
 
@@ -233,7 +233,7 @@ class webController extends Controller
         }
         $zip->close();
 
-        return response()->download($fileName);
+        return redirect("/$fileName");
     }
 
 
